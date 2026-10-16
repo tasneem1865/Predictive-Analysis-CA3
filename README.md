@@ -1,80 +1,106 @@
-# Predictive-Analysis-CA3
-# Used Car Price Prediction Using Predictive Analytics
+# Used Car Price Prediction
 
-## 1. Problem Statement
+## Project Overview
 
-The objective of this project is to predict the selling price of a used car based on its features, including manufacturing year, kilometers driven, fuel type, seller type, transmission, and ownership history.
+This project uses **Predictive Analytics and Machine Learning** to estimate the selling price of used cars based on their features. It follows the **Knowledge Discovery in Databases (KDD) process** to prepare data, explore patterns, train models, and evaluate predictions.
 
-The project uses machine learning regression algorithms to learn patterns from historical used-car data and estimate selling prices.
+## Objectives
 
-## 2. Dataset
+- Combine two CarDekho datasets for analysis.
+- Clean and preprocess the combined data.
+- Explore the relationship between car features and selling prices.
+- Train and compare multiple regression models.
+- Evaluate model performance using standard regression metrics.
+- Predict the estimated selling price of a used car.
 
-**Dataset name:** CarDekho Used Car Dataset
+## Datasets
 
-**File:** `CAR DETAILS FROM CAR DEKHO.csv`
+The project uses the following two datasets:
 
-The dataset contains used-car information such as:
+1. `CAR DETAILS FROM CAR DEKHO.csv`
+2. `Car details v3.csv`
 
-- Car name
-- Manufacturing year
-- Selling price
-- Kilometers driven
-- Fuel type
-- Seller type
-- Transmission
-- Owner history
+The common columns are selected from both datasets, and their records are combined. Exact duplicate records and invalid entries are removed during data cleaning.
 
-The target variable is `selling_price`.
+## Technologies Used
 
-Dataset source: [CarDekho Vehicle Dataset on Kaggle](https://www.kaggle.com/datasets/nehalbirla/vehicle-dataset-from-cardekho)
+- **Python** — Programming language
+- **Pandas** — Data manipulation and cleaning
+- **NumPy** — Numerical operations
+- **Matplotlib** — Data visualisation
+- **Seaborn** — Statistical visualisation
+- **Scikit-learn** — Data preprocessing, model training and evaluation
+- **Google Colab** — Development environment
 
-## 3. Methodology
+## Project Workflow
 
-The project follows the Knowledge Discovery in Databases (KDD) process:
+1. **Data Collection:** Load both CarDekho datasets.
+2. **Data Integration:** Select common columns and combine the datasets.
+3. **Data Cleaning:** Handle missing values, correct data types, remove exact duplicates and filter invalid records.
+4. **Feature Engineering:** Extract the car brand and calculate car age.
+5. **Exploratory Data Analysis:** Visualise price distributions and relationships between car features.
+6. **Data Preprocessing:** Handle missing values, scale numerical features and encode categorical features.
+7. **Model Training:** Train four regression models.
+8. **Model Evaluation:** Compare performance using MAE, RMSE and R².
+9. **Price Prediction:** Use the selected model to estimate the selling price of a used car.
 
-1. **Data Selection:** Load and inspect the CarDekho dataset.
-2. **Data Preprocessing:** Check missing values, remove duplicates, and prepare the data.
-3. **Exploratory Data Analysis:** Use graphs to examine price distributions and relationships between car features and selling price.
-4. **Data Transformation:** Convert categorical variables into numerical features.
-5. **Predictive Modelling:** Train Linear Regression, Decision Tree Regressor, and Random Forest Regressor.
-6. **Model Evaluation:** Compare models using MAE, RMSE, and R² score.
-7. **Knowledge Presentation:** Display model comparisons, actual versus predicted prices, sample predictions, and feature importance.
+## Machine Learning Models
 
-## 4. Technologies Used
+The following regression algorithms are implemented:
 
-- Python
-- Google Colab / Jupyter Notebook
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
+- Linear Regression
+- Decision Tree Regressor
+- Random Forest Regressor
+- Gradient Boosting Regressor
 
-## 5. Project Files
+The models are compared using the same training and testing split. The model with the lowest Mean Absolute Error (MAE) is selected as the best-performing model according to that criterion.
 
-- `predictive_project.ipynb` — Complete implementation of the predictive analytics model.
-- `CAR DETAILS FROM CAR DEKHO.csv` — Dataset used for model development.
-- `README.md` — Project description, methodology, and execution instructions.
+## Evaluation Metrics
 
-## 6. How to Run the Project
+| Metric | Purpose |
+|---|---|
+| MAE | Measures the average absolute prediction error |
+| RMSE | Penalises larger prediction errors more strongly |
+| R² Score | Measures how well the model explains variation in selling prices |
+
+The notebook also includes actual-versus-predicted visualisation, feature analysis where supported, and a prediction-error breakdown.
+
+## Visualisations
+
+The project includes graphs for:
+
+- Distribution of used-car selling prices
+- Number of cars by fuel type
+- Manufacturing year versus selling price
+- Kilometres driven versus selling price
+- Comparison of regression model performance
+- Actual versus predicted prices
+- Average selling price by manufacturing year
+- Predictions within and above a 20% error threshold
+
+## How to Run the Project
 
 1. Download or clone this repository.
-2. Open `predictive_project.ipynb` in Google Colab or Jupyter Notebook.
-3. Upload `CAR DETAILS FROM CAR DEKHO.csv` to the Colab session if it is not already available.
-4. Ensure the dataset path in the notebook is correct.
-5. Run the notebook cells in order.
-6. Review the graphs, evaluation metrics, model comparisons, and predictions.
+2. Open `Used_Car_Price_Prediction.ipynb` in Google Colab.
+3. Run the notebook cells in order.
+4. Upload both required CSV datasets when prompted.
+5. Allow the notebook to clean the data, train the models and display the results.
+6. Use the prediction function at the end to estimate a car's selling price.
 
-## 7. Evaluation Metrics
+## Results
 
-- **MAE:** Measures the average absolute difference between actual and predicted prices.
-- **RMSE:** Measures prediction error while penalizing larger errors more heavily.
-- **R² Score:** Measures how much variation in selling prices is explained by the model.
+The notebook calculates model performance metrics using the combined and cleaned dataset. It compares the four regression models and selects the model with the lowest MAE.
 
-The best-performing model is identified by comparing the evaluation results.
+The final evaluation scores and prediction results are generated when the notebook is executed. They depend on the datasets and the resulting train-test split.
 
-## 8. Conclusion
+## Conclusion
 
-This project demonstrates how predictive analytics and regression algorithms can be used to estimate used-car selling prices. The performance of three regression models is compared, and the results are analyzed using evaluation metrics and visualizations.
+This project demonstrates how predictive analytics can support used-car price estimation. By combining data from two sources, preparing the data, comparing regression algorithms and evaluating their predictions, the project provides an end-to-end machine-learning workflow.
 
-The model's accuracy depends on the quality of the dataset and the features used. Further improvements may include hyperparameter tuning, feature engineering, and incorporating additional relevant car information.
+**Note:** Predicted prices are estimates based on historical listings and are not guaranteed market prices.
+
+## Author
+
+**Tasneem Sadikot**
+
+Project: Predictive Analytics — Used Car Price Prediction
